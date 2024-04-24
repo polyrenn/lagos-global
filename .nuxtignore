@@ -1,0 +1,6 @@
+# ignore page ngodirectory.vue
+pages/ngodirectory.vue
+pages/wp-admin.vue
+# ignore page inside ngodirectory folder
+pages/ngodirectory/*.vue
+pages/wp-admin/*.vue
