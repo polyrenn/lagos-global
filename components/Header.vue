@@ -41,7 +41,6 @@
                   <ul class="navigation clearfix">
                     <li><a href="/">Home</a></li>
 
-                    <li><a href="/lagosthemes">SDGs</a></li>
 
                     <li class="dropdown">
                       <a href="#">Investment Opportunities</a>

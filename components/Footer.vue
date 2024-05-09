@@ -9,18 +9,17 @@
             <div class="footer-widget about-widget">
               <div class="logo">
                 <a href="/"><img width="150" height="150" src="~/assets/images/logo.png" alt=""></a> <br>
-                <span>Lagos Global</span>
               </div>
 
               <div class="address">
-                <h5>Sustainable Development Goals & Investment</h5>
+                <h5>Invest In Lagos</h5>
 
                 <div class="text">
-                  3rd Floor, Admin Block,
-                  Governor's Office,
-                  State House,
-                  Alausa - Ikeja,
-                  Lagos
+                 Ministry of Commerce, Industry and Cooperatives, 
+                 Block 8, The Secretariat, 
+                 Obafemi Awolowo Way,
+                 Alausa, 
+                 Ikeja, Lagos.
                 </div>
               </div>
 
@@ -103,13 +102,13 @@
               <div class="widget-content">
                 <ul class="links">
                   <li class="d-flex py-1">
-                    <a target="_blank" href="https://web.facebook.com/Lagos-SDG-Invest-123360722387457/"><span class="fab fa-facebook-f text-white" /><span class="pl-2">Facebook</span></a>
+                    <a target="_blank" href="https://web.facebook.com/LagosCommerce/?_rdc=1&_rdr"><span class="fab fa-facebook-f text-white" /><span class="pl-2">Facebook</span></a>
                   </li>
                   <li class="d-flex py-1">
-                    <a target="_blank" href=" https://twitter.com/lagossdginvest"><span class="fab fa-twitter text-white" /><span class="pl-2">Twitter</span></a>
+                    <a target="_blank" href="https://twitter.com/LasgMccti"><span class="fab fa-twitter text-white" /><span class="pl-2">Twitter</span></a>
                   </li>
                   <li class="d-flex py-1">
-                    <a target="_blank" href="https://www.instagram.com/lagossdg.invest/"><span class="fab fa-instagram text-white" /><span class="pl-2">Instagram</span></a>
+                    <a target="_blank" href="https://www.instagram.com/lagosmccti/"><span class="fab fa-instagram text-white" /><span class="pl-2">Instagram</span></a>
                   </li>
                   <!--                  <li class="d-flex py-1">-->
                   <!--                    <a href="#"><span class="fab fa-youtube text-white" /></a><span class="pl-2">Youtube</span>-->
