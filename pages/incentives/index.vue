@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
   <div>
     <div class="page-wrapper">
@@ -16,23 +15,18 @@
 
       <div>
         <!-- Banner Section -->
-
         <section class="banner-section banner-one">
-          <div class="dashboard-inner" style="background-color:#FFFFFF; height: 400px;" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.7) -9.68%, rgba(25, 53, 102, 0.7) 59.8%), url(${backgroundUrl})` }">
-            <!--            <canvas id="dashboard-report" />-->
+          <div class="dashboard-inner" style="background-color:#FFFFFF; height: 400px;" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.7) -9.68%, rgba(25, 53, 102, 0.7) 59.8%), url(${backgroundUrl.value})` }">
             <div class="h-100 d-flex justify-content-center align-items-center">
               <div class="w-100 text-center africa-global-city text-uppercase">
                 Investment Incentives
               </div>
             </div>
           </div>
-          <!-- Slide Item -->
         </section>
-
         <!--End Banner Section -->
 
         <!--Facts Section-->
-
         <section style="background-color: white; padding: 110px 0px 70px;">
           <div class="auto-container">
             <div data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="incentive-heading">
@@ -43,13 +37,13 @@
                 In creating a conducive business environment, the Lagos State government has put in place a wide range of fiscal incentives. Some of the main incentives are import concessions, tax exemption for exported products and tax reductions for qualifying companies
               </div>
               <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="col-sm-6 align-items-center justify-content-center d-flex">
-                <img src="~/assets/images/incentive2.png">
+                <img src="~/assets/images/incentive2.png" alt="Incentive">
               </div>
             </div>
           </div>
         </section>
 
-        <section style="background-color:  white; padding: 110px 0px 70px; background-size: 100% 100%; background-repeat: no-repeat" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.1) -9.68%, rgba(25, 53, 102, 0.1) 59.8%), url(${backgroundUrl2})` }">
+        <section style="background-color:  white; padding: 110px 0px 70px; background-size: 100% 100%; background-repeat: no-repeat" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.1) -9.68%, rgba(25, 53, 102, 0.1) 59.8%), url(${backgroundUrl2.value})` }">
           <div class="auto-container">
             <div
               data-aos="flip-down"
@@ -464,7 +458,7 @@
             <div class="d-flex flex-column">
               <div data-aos="zoom-in-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="bg-white">
                 <div class="w-100 d-flex align-items-center justify-content-center">
-                  <img src="~/assets/images/incentive1.png" width="100%">
+                  <img src="~/assets/images/incentive1.png" width="100%" alt="Incentive LFTZ">
                 </div>
                 <div class="p-5">
                   <div class="incentive-heading2 w-100 text-center mb-3">
@@ -498,7 +492,7 @@
               </div>
               <div data-aos="zoom-in-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="bg-white mt-5">
                 <div class="w-100 d-flex align-items-center justify-content-center">
-                  <img src="~/assets/images/invest32.png" width="100%">
+                  <img src="~/assets/images/invest32.png" width="100%" alt="Pioneer Status">
                 </div>
                 <div class="p-5">
                   <div class="incentive-heading2 w-100 text-center mb-3">
@@ -518,7 +512,7 @@
             <div class="d-flex flex-column">
               <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="bg-white">
                 <div class="w-100 d-flex align-items-center justify-content-center">
-                  <img src="~/assets/images/invest30.png" width="100%">
+                  <img src="~/assets/images/invest30.png" width="100%" alt="Labour Intensive">
                 </div>
                 <div class="p-5">
                   <div class="incentive-heading2 w-100 text-center mb-3">
@@ -542,7 +536,7 @@
               </div>
               <div data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="bg-white mt-5">
                 <div class="w-100 d-flex align-items-center justify-content-center">
-                  <img src="~/assets/images/invest31.png" width="100%">
+                  <img src="~/assets/images/invest31.png" width="100%" alt="SME Incentives">
                 </div>
                 <div class="p-5">
                   <div class="incentive-heading2 w-100 text-center mb-3">
@@ -560,7 +554,7 @@
               </div>
               <div data-aos="zoom-in-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="bg-white mt-5">
                 <div class="w-100 d-flex align-items-center justify-content-center">
-                  <img src="~/assets/images/invest33.png" width="100%">
+                  <img src="~/assets/images/invest33.png" width="100%" alt="R&D Incentive">
                 </div>
                 <div class="p-5">
                   <div class="incentive-heading2 w-100 text-center mb-3">
