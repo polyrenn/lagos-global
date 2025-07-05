@@ -7,8 +7,7 @@ export default defineNuxtConfig({
       title: 'Lagos Global',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -35,7 +34,8 @@ export default defineNuxtConfig({
     '~/assets/css/bootstrap.css', // Assuming you want to keep bootstrap styles
     '~/assets/css/style.css', // Main stylesheet
     '~/assets/css/responsive.css',
-    'aos/dist/aos.css' // AOS library
+    'aos/dist/aos.css', // AOS library
+    'vue3-carousel/dist/carousel.css'
     // Add other global CSS files here
   ],
 
@@ -47,8 +47,7 @@ export default defineNuxtConfig({
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios', // Still usable but consider Nuxt 3's built-in $fetch or useFetch
-    '@nuxtjs/gtm'
+    'vue3-carousel-nuxt'
     // '@nuxt/content', // Example: If you plan to use Nuxt Content
   ],
 

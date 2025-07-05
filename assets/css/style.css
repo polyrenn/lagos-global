@@ -11,15 +11,15 @@
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 */
-@import url('~assets/css/owl.css');
-@import url('~assets/css/fontawesome-all.css');
-@import url('~assets/css/flaticon.css');
-@import url('~assets/css/animate.css');
-@import url('~assets/css/jquery-ui.css');
-@import url('~assets/css/jquery.fancybox.min.css');
-@import url('~assets/css/scrollbar.css');
-@import url('~assets/css/hover.css');
-@import url('~assets/css/custom-animate.css');
+@import url('~/assets/css/owl.css');
+@import url('~/assets/css/fontawesome-all.css');
+@import url('~/assets/css/flaticon.css');
+@import url('~/assets/css/animate.css');
+@import url('~/assets/css/jquery-ui.css');
+@import url('~/assets/css/jquery.fancybox.min.css');
+@import url('~/assets/css/scrollbar.css');
+@import url('~/assets/css/hover.css');
+@import url('~/assets/css/custom-animate.css');
 
 /***
 
@@ -16607,13 +16607,3 @@ margin-left: 16px;
     height: 400px;
   }
 }
-
-
-
-
-
-
-
-
-
-

@@ -7,12 +7,6 @@
         <div class="icon" />
       </div>
 
-      <!-- Main Header -->
-      <Header />
-      <!-- End Main Header -->
-
-      <!--Search Popup-->
-      <SearchPopup />
 
       <div>
         <!-- Banner Section -->
@@ -348,127 +342,16 @@
                 </p>
               </div>
             </div>
-            <VueSlickCarousel v-bind="settings" class="slick-slide mt-5">
-              <div class="carousel-body">
-                <div class="carousel-card" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(141, 141, 141, 0.1) -9.68%, rgba(141, 141, 141, 0.1) 59.8%),url(${backgroundUrl6})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom' }">
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    BRIQUETTE PRODUCING COMPANIES
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      A Briquette is a black of flammable material used as a fuel to start and maintain a fire.
-                    </p>
-                    <p>
-                      They are produced from saw dust or RICE HUSK, solid and cylindrical in shape.
-                    </p>
-                    <p>
-                      It makes available a affordable cooking energy substitute to consumers that can be easily accessed.
-                    </p>
-                    <p>
-                      Briquettes can be used as cooking fuel in hotels, boarding school hostel, eatery and factories where boilers are used.
-                    </p>
-                    <p>
-                      This will also reduce deforestation in the state by the activities of those looking for fire wood and reduce emission of greenhouse gas (GHG) to the atmosphere.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-body">
-                <div class="carousel-card" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(141, 141, 141, 0.1) -9.68%, rgba(141, 141, 141, 0.1) 59.8%),url(${backgroundUrl6})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom' }">
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    RICE FLOUR FACTORIES
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      The Rice Factory will generated broken rice of various sizes
-                      and those producing ground rice will use it to produce rice flour for their consumers
-                    </p>
-                  </div>
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    RICE FLAKES/CRIPSIES FACTORIES
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      Factories for production of breakfast foods and snacks
-                      could be among those to be considered
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!--              <div class="carousel-card">-->
-              <!--                <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">-->
-              <!--                  RICE FLAKES/CRIPSIES FACTORIES-->
-              <!--                </div>-->
-              <!--                <div class="carousal-card-heading px-5 py-2">-->
-              <!--                  <p>-->
-              <!--                    Factories for production of breakfast foods and snacks-->
-              <!--                    could be among those to be considered-->
-              <!--                  </p>-->
-              <!--                </div>-->
-              <!--              </div>-->
-              <div class="carousel-body">
-                <div class="carousel-card" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(141, 141, 141, 0.1) -9.68%, rgba(141, 141, 141, 0.1) 59.8%),url(${backgroundUrl6})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom' }">
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    SACK MANUFACTURING FACTORY
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      Bag/Sack manufacture as practiced by Flour Mills Apapa.
-                      A sack factory is recommended to be located in the complex to bring the sack manufacture close by.
-                    </p>
-                  </div>
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    RICE HUSK BAGGING FACILITY
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      Some of the nearby buildings could be used for bagging/storing
-                      excess rice husk before evacuation from the factory area.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-body">
-                <div class="carousel-card" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(141, 141, 141, 0.1) -9.68%, rgba(141, 141, 141, 0.1) 59.8%),url(${backgroundUrl6})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom' }">
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    PRODUCTION OF ACTIVATED CARBON
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      This is another source of usage for the excess rice husks
-                    </p>
-                  </div>
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    RICE BRAN OIL
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      Companies that can extract oil from rice bran could be set up in one of the ancillary buildings.
-                    </p>
-                    <p>
-                      Bran oil is used for cooking and waxes for cosmetic products
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-body">
-                <div class="carousel-card" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(141, 141, 141, 0.1) -9.68%, rgba(141, 141, 141, 0.1) 59.8%),url(${backgroundUrl6})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom' }">
-                  <div class="carousal-card-heading font-weight-bold px-5 pt-5 pb-3">
-                    HAULAGE AND TRANSPORTATION SERVIVES
-                  </div>
-                  <div class="carousal-card-heading px-5 py-2">
-                    <p>
-                      Goods and products produced often need to be transported from
-                      the farmer to the consumer,
-                    </p>
-                    <p>
-                      therefore create a huge need and opportunity for investment in
-                      Haulage and transportation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </VueSlickCarousel>
+            <Carousel :settings="settings" :breakpoints="breakpoints">
+              <Slide v-for="slide in 10" :key="slide">
+                <div class="carousel__item">{{ slide }}</div>
+              </Slide>
+
+              <template #addons>
+                <Navigation />
+                <Pagination />
+              </template>
+            </Carousel>
           </div>
         </section>
       </div>
@@ -485,21 +368,10 @@
 </template>
 
 <script>
-// import { Carousel, Slide } from 'vue-carousel'
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-import ScrollTop from '@/components/ScrollTop'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import SearchPopup from '../../components/SearchPopup'
-import bannerImageOne from '~/assets/images/main-slider/1.jpg'
-import bannerImageTwo from '~/assets/images/main-slider/2.jpg'
-import bannerImageThree from '~/assets/images/main-slider/3.jpg'
-import patternImage from '~/assets/images/background/pattern-1.png'
-import testimonialBackground from '~/assets/images/background/image-2.jpg'
-import suggestionBackground from '~/assets/images/background/image-5.jpg'
-import sanwoOluBackground from '~/assets/images/background/image-1-test.jpg'
+import { defineComponent } from 'vue'
+import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+
+import 'vue3-carousel/dist/carousel.css'
 import backgroundUrl from '~/assets/images/background/agric-bi.png'
 import backgroundUrl2 from '~/assets/images/background/agric-fish-bi.png'
 import backgroundUrl3 from '~/assets/images/background/pig-invest-bi.png'
@@ -507,77 +379,64 @@ import backgroundUrl4 from '~/assets/images/background/chicken-invest-bi.png'
 import backgroundUrl5 from '~/assets/images/background/rice-bi.png'
 import backgroundUrl6 from '~/assets/images/background/rice-bi-30.png'
 
-export default {
+export default defineComponent({
+  name: 'Breakpoints',
   components: {
-    ScrollTop,
-    Header,
-    SearchPopup,
-    Footer,
-    VueSlickCarousel
-    // Carousel,
-    // Slide
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   },
-  data () {
-    return {
-      bannerImageOne,
-      bannerImageTwo,
-      bannerImageThree,
-      patternImage,
-      testimonialBackground,
-      suggestionBackground,
-      sanwoOluBackground,
-      backgroundUrl,
-      backgroundUrl2,
-      backgroundUrl3,
-      backgroundUrl4,
-      backgroundUrl5,
-      backgroundUrl6,
-      settings: {
-        dots: true,
-        focusOnSelect: true,
-        infinite: true,
-        speed: 6000,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        touchThreshold: 5,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        pauseOnDotsHover: true,
-        pauseOnFocus: true,
-        pauseOnHover: true,
-        adaptiveHeight: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-              // initialSlide: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      }
-    }
-  }
-}
+  data: () => ({
+    backgroundUrl,
+    backgroundUrl2,
+    backgroundUrl3,
+    backgroundUrl4,
+    backgroundUrl5,
+    backgroundUrl6,
+    // carousel settings
+    settings: {
+      itemsToShow: 1,
+      snapAlign: 'center',
+    },
+    // breakpoints are mobile first
+    // any settings not specified will be inherited from the carousel settings
+    breakpoints: {
+      // 700px and up
+      700: {
+        itemsToShow: 3.5,
+        snapAlign: 'center',
+      },
+      // 1024 and up
+      1024: {
+        itemsToShow: 5,
+        snapAlign: 'start',
+      },
+    },
+  }),
+})
 </script>
 
 <style>
+.carousel__item {
+  min-height: 200px;
+  width: 100%;
+  background-color: var(--vc-clr-primary);
+  color: var(--vc-clr-white);
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.carousel__slide {
+  padding: 10px;
+}
+
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  border: 5px solid white;
+}
 </style>

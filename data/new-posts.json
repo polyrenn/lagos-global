@@ -1,0 +1,62 @@
+[
+  {
+    "id": "local-1",
+    "title": "Inventory of Incentives for Investors, MSMEs & Operators in Lagos State",
+    "image": "incentive.png",
+    "location": "Lagos, Nigeria",
+    "created_at": "2023-10-15T12:00:00.000000Z",
+    "author": "Lagos Global",
+    "content": "A comprehensive guide to the investment incentives available for investors, MSMEs, and operators within Lagos State. Click to download the document.",
+    "link": "/LAGOS Investment Incentives-1.pdf",
+    "is_external": false,
+    "slug": "2023-10-15-inventory-of-incentives-for-investors-msmes-operators-in-lagos-state"
+  },
+  {
+    "id": "local-2",
+    "title": "Guideline for Auction Licensing",
+    "image": "incentive.png",
+    "location": "Lagos, Nigeria",
+    "created_at": "2023-10-20T12:00:00.000000Z",
+    "author": "Lagos Global",
+    "content": "Official guidelines for obtaining an auction license in Lagos State. Click to download the document.",
+    "link": "/GUIDELINES FOR AUCTION LICENSE[1].pdf",
+    "is_external": false,
+    "slug": "2023-10-20-guideline-for-auction-licensing"
+  },
+  {
+    "id": "local-3",
+    "title": "Guidelines for Registration of Cooperatives",
+    "image": "incentive.png",
+    "location": "Lagos, Nigeria",
+    "created_at": "2023-10-25T12:00:00.000000Z",
+    "author": "Lagos Global",
+    "content": "The official 2023 guidelines for the registration of cooperative societies in Lagos State. Click to download the document.",
+    "link": "/Guidelines_Coops_Registration 2023.pdf",
+    "is_external": false,
+    "slug": "2023-10-25-guidelines-for-registration-of-cooperatives"
+  },
+  {
+    "id": "local-4",
+    "title": "LSETF Funding Programs",
+    "image": "incentive.png",
+    "location": "Lagos, Nigeria",
+    "created_at": "2023-10-28T12:00:00.000000Z",
+    "author": "Lagos Global",
+    "content": "Explore various funding programs and opportunities offered by the Lagos State Employment Trust Fund (LSETF) to support entrepreneurs and businesses in Lagos. Click to visit the website.",
+    "link": "https://www.lsetf.ng/",
+    "is_external": true,
+    "slug": "2023-10-28-lsetf-funding-programs"
+  },
+  {
+    "id": "local-5",
+    "title": "Lagos State Ministry of Commerce, Cooperatives, Trade and Investment",
+    "image": "incentive.png",
+    "location": "Lagos, Nigeria",
+    "created_at": "2023-10-30T12:00:00.000000Z",
+    "author": "Lagos Global",
+    "content": "Visit the official website for the Lagos State Ministry of Commerce, Cooperatives, Trade and Investment for information on trade, investment opportunities, and cooperative services. Click to visit the website.",
+    "link": "https://mccti.lagosinvest.org/",
+    "is_external": true,
+    "slug": "2023-10-30-lagos-state-ministry-of-commerce-cooperatives-trade-and-investment"
+  }
+]

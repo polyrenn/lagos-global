@@ -2,10 +2,6 @@
 <template>
   <div>
     <div class="page-wrapper">
-      <!-- Preloader -->
-      <div class="preloader">
-        <div class="icon" />
-      </div>
 
       <!-- Main Header -->
       <Header />
@@ -21,7 +17,7 @@
         <div v-if="loading" class="preloader2">
           <div class="icon" />
         </div>
-        <section v-if="!loading" class="about-section" style="background-color: white">
+        <section v-else class="about-section" style="background-color: white">
           <div class="auto-container">
             <div class="edu-header1 text-center">
               All Press Releases
@@ -48,7 +44,7 @@
           </div>
         </section>
         <div v-if="total > 15" class="auto-container p-2 d-flex justify-content-end">
-          <pagination v-model="page" :records="total" :per-page="per_page" @paginate="increase" />
+          <v-pagination-3 v-model="page" :records="total" :per-page="per_page" @paginate="increase" />
         </div>
       </div>
     </div>
@@ -65,7 +61,7 @@
 
 <script>
 import ScrollTop from '@/components/ScrollTop'
-import Pagination from 'vue-pagination-2'
+import Pagination from 'v-pagination-3'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import SearchPopup from '../../components/SearchPopup'
@@ -87,7 +83,7 @@ export default {
     Header,
     SearchPopup,
     Footer,
-    Pagination
+    'v-pagination-3': Pagination
   },
   filters: {
     truncate (text, length, suffix) {
@@ -121,21 +117,32 @@ export default {
   created () {
     this.fetch()
   },
+  mounted () {
+    const preloader = document.querySelector('.preloader')
+    if (preloader) {
+      preloader.style.display = 'none'
+    }
+  },
   methods: {
-    increase () {
+    increase (page) {
+      this.page = page
       this.fetch()
     },
     async fetch () {
       this.loading = true
-      const post = await fetch(`https://api.lagosglobal.org/api/v1/events?page=${this.page}`)
-        .then(res => res.json())
-      this.loading = false
-      if (post.data.length > 0) {
-        this.posts = post.data
-        this.per_page = post.meta.per_page
-        this.total = post.meta.total
-      } else {
-        throw new Error('Post not found')
+      try {
+        const post = await fetch(`https://api.lagosglobal.org/api/v1/events?page=${this.page}`)
+          .then(res => res.json())
+        if (post.data.length > 0) {
+          this.posts = post.data
+          this.per_page = post.meta.per_page
+          this.total = post.meta.total
+        } else {
+          throw new Error('Post not found')
+        }
+      } catch (error) {
+        console.error('Failed to fetch events', error)
+      } finally {
         this.loading = false
       }
     }

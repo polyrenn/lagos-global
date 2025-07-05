@@ -16,7 +16,7 @@
       <div>
         <!-- Banner Section -->
         <section class="banner-section banner-one">
-          <div class=" dashboard-inner" style="background-color:#FFFFFF; height: 600px;" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.7) -9.68%, rgba(25, 53, 102, 0.7) 59.8%), url(${backgroundUrlRef.value})` }">
+          <div class=" dashboard-inner" style="background-color:#FFFFFF; height: 600px;" :style="{ backgroundImage: `linear-gradient(303.69deg, rgba(7, 26, 53, 0.7) -9.68%, rgba(25, 53, 102, 0.7) 59.8%), url(${backgroundUrlRef})` }">
             <div class="h-75 d-flex justify-content-center align-items-center w-50">
               <div class="w-75 h-50">
                 <div class="lagos-global-text text-white">
@@ -223,7 +223,7 @@
                   <div id="sector-info" class="featured-block-two col-lg-12 col-md-6 col-sm-12 h-100">
                     <div class="inner-box h-100">
                       <div>
-                        <div v-if="isEnvironment.value" class="content">
+                        <div v-if="isEnvironment" class="content">
                           <h4><a>Environment</a></h4>
                           <div class="row align-items-center">
                             <div class="col-sm-6">
@@ -252,7 +252,7 @@
                           </div>
                         </div>
 
-                        <div v-if="isHealth.value" class="content">
+                        <div v-if="isHealth" class="content">
                           <h4><a>Health</a></h4>
                            <div class="row">
                             <div class="col-sm-6">
@@ -280,7 +280,7 @@
                             <NuxtLink class="float-right" to="/health">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isAgriculture.value" class="content">
+                        <div v-if="isAgriculture" class="content">
                           <h4><a>Agriculture</a></h4>
                           <div class="row" style="margin-bottom: 25px">
                             <div class="col-5">
@@ -302,7 +302,7 @@
                             <NuxtLink to="/agriculture">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isHousing.value" class="content">
+                        <div v-if="isHousing" class="content">
                           <h4><a>Housing</a></h4>
                           <div class="row">
                             <div class="col-sm-6">
@@ -322,7 +322,7 @@
                             <NuxtLink class="float-right" to="/housing">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isTransportation.value" class="content">
+                        <div v-if="isTransportation" class="content">
                           <h4><a>Transportation</a></h4>
                            <div class="chart-figure">
                             Investing in Bus Rapid Transit
@@ -343,7 +343,7 @@
                             <NuxtLink class="float-right" to="/transportation">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isTourism.value" class="content">
+                        <div v-if="isTourism" class="content">
                           <h4><a>Tourism and culture</a></h4>
                           <div class="row" style="margin-bottom: 25px">
                             <div class="col-5">
@@ -365,7 +365,7 @@
                             <NuxtLink to="/tourism">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isIct.value" class="content">
+                        <div v-if="isIct" class="content">
                           <h4><a>ICT</a></h4>
                            <div class="row" style="margin-bottom: 25px">
                             <div class="col-5">
@@ -387,7 +387,7 @@
                             <NuxtLink to="/technology">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isPower.value" class="content">
+                        <div v-if="isPower" class="content">
                           <h4><a>Power and infrastructure</a></h4>
                           <div class="row">
                             <div class="col-sm-6">
@@ -407,7 +407,7 @@
                             <NuxtLink class="float-right" to="/power">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isOil.value" class="content h-100">
+                        <div v-if="isOil" class="content h-100">
                           <h4><a>Oil and Gas</a></h4>
                           <div class="row">
                             <div class="col-sm-6">
@@ -427,7 +427,7 @@
                             <NuxtLink class="float-right" to="/oilandgas">Read More</NuxtLink>
                           </div>
                         </div>
-                        <div v-if="isEducation.value" class="content">
+                        <div v-if="isEducation" class="content">
                           <h4><a>Education</a></h4>
                           <div class="row">
                             <div class="col-sm-6">
@@ -500,7 +500,7 @@
               <div data-aos="zoom-in-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="col-sm-6">
                 <div class="row">
                   <div class="row px-2 startup-margin">
-                    <div v-for="item in storyData.value" :key="item.id" class="col-sm-6">
+                    <div v-for="item in storyData" :key="item.id" class="col-sm-6">
                       <NuxtLink style="color: inherit" :to="`/startup-stories/${item.id}`">
                         <div class="story-board h-100">
                           <img :src="`https://api.lagosglobal.org/api/v1/media/${item.image}`" class="img-fluid" :alt="item.title">
@@ -528,7 +528,7 @@
               <div class="separator"><span class="cir c-1" /><span class="cir c-2" /><span class="cir c-3" /></div>
             </div>
             <div class="row clearfix">
-              <div v-for="item in eventsData.value" :key="item.id" class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+              <div v-for="item in eventsData" :key="item.id" class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="col-inner">
                   <div class="carousel-box"> <!-- Note: This class implies a carousel, which is not implemented here yet -->
                     <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="event-block">
@@ -570,48 +570,52 @@
               <h2>Latest Press Releases</h2>
               <div class="separator"><span class="cir c-1" /><span class="cir c-2" /><span class="cir c-3" /></div>
             </div>
-            <!-- Carousel for press releases - Will need a Vue 3 compatible carousel -->
+            <!-- Carousel for press releases -->
             <div class="carousel-box">
-              <div class="news-carousel"> <!-- Removed owl-theme owl-carousel classes -->
-                <div v-for="item in pressReleaseData.value" :key="item.id" class="news-block">
-                  <div class="inner-box">
-                    <div class="image-box">
-                      <figure class="image">
-                        <img :src="`https://api.lagosglobal.org/api/v1/media/${item.image}`" :alt="item.title">
-                      </figure>
-                      <div class="hover-box">
-                        <!-- Lightbox functionality will need a Vue 3 plugin -->
-                        <div class="link zoom-link">
-                          <a style="color: inherit" :href="`https://api.lagosglobal.org/api/v1/media/${item.image}`" target="_blank" rel="noopener noreferrer">
-                            <span class="icon flaticon-zoom-in"/>
-                          </a>
-                        </div>
-                        <div class="link single-link">
-                          <NuxtLink :to="`/press-release/${item.id}`"><span class="icon flaticon-link-4" /></NuxtLink>
+              <carousel :items-to-show="3" :wrap-around="true">
+                <slide v-for="item in pressReleaseData" :key="item.id">
+                  <div class="news-block">
+                    <div class="inner-box">
+                      <div class="image-box">
+                        <figure class="image">
+                          <img :src="getImage(item)" :alt="item.title" style="height: 250px; object-fit: cover;">
+                        </figure>
+                        <div class="hover-box">
+                          <div class="link zoom-link">
+                            <a style="color: inherit" :href="getImage(item)" target="_blank" rel="noopener noreferrer">
+                              <span class="icon flaticon-zoom-in"/>
+                            </a>
+                          </div>
+                          <div class="link single-link">
+                            <a :href="getLink(item)" :target="item.is_external ? '_blank' : undefined" :rel="item.is_external ? 'noopener noreferrer' : undefined"><span class="icon flaticon-link-4" /></a>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="lower-box">
-                      <div class="upper-info">
-                        <h4><NuxtLink style="color: inherit" :to="`/press-release/${item.id}`">{{ item.title }} </NuxtLink></h4>
-                      </div>
-                      <div class="meta-info clearfix">
-                        <div class="author-info clearfix">
-                          <div class="author-icon">
-                            <span class="flaticon-user-3" />
-                          </div>
-                          <div class="author-title">
-                            By {{ item.author }}
-                          </div>
-                          <div class="date">
-                            {{ item.created_at.toString().split('T')[0] }}
+                      <div class="lower-box">
+                        <div class="upper-info">
+                          <h4><a :href="getLink(item)" :target="item.is_external ? '_blank' : undefined" :rel="item.is_external ? 'noopener noreferrer' : undefined" style="color: inherit">{{ item.title }} </a></h4>
+                        </div>
+                        <div class="meta-info clearfix">
+                          <div class="author-info clearfix">
+                            <div class="author-icon">
+                              <span class="flaticon-user-3" />
+                            </div>
+                            <div class="author-title">
+                              By {{ item.author }}
+                            </div>
+                            <div class="date">
+                              {{ formatDate(item.created_at) }}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </slide>
+                <template #addons>
+                  <navigation />
+                </template>
+              </carousel>
             </div>
             <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="see-all text-right text-dark mt-5 font-weight-bold">
               <NuxtLink to="/press-release"><span class="arrow flaticon-right-2" /> View All Press Release</NuxtLink>
@@ -631,19 +635,39 @@
         <div class="row clearfix">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="col-inner">
-              <!-- Carousel for top companies - Will need a Vue 3 compatible carousel -->
-              <div class="top-companies-carousel"> <!-- Removed owl-carousel owl-theme classes -->
-                <img src="~/assets/images/nestle_company.png" width="100" height="100" alt="nestle" class="company-image">
-                <img src="~/assets/images/chevron.png" width="100" height="100" alt="chevron" class="company-image">
-                <img src="~/assets/images/total_comp.png" width="100" height="100" alt="total" class="company-image">
-                <img src="~/assets/images/kpmg.png" width="100" height="100" alt="kpmg" class="company-image">
-                <img src="~/assets/images/shell.png" width="100" height="100" alt="shell" class="company-image">
-                <img src="~/assets/images/andela.png" width="100" height="100" alt="andela" class="company-image">
-                <img src="~/assets/images/mtn.png" width="100" height="100" alt="mtn" class="company-image">
-                <img src="~/assets/images/dangote.png" width="100" height="100" alt="dangote" class="company-image">
-                <img src="~/assets/images/exon_mobile.png" width="100" height="100" alt="exon_mobile" class="company-image">
-                <img src="~/assets/images/nnpc.png" width="100" height="100" alt="nnpc" class="company-image">
-              </div>
+              <!-- Carousel for top companies -->
+              <carousel :items-to-show="5" :wrap-around="true" :autoplay="2000">
+                <slide>
+                  <img src="~/assets/images/nestle_company.png" width="100" height="100" alt="nestle" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/chevron.png" width="100" height="100" alt="chevron" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/total_comp.png" width="100" height="100" alt="total" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/kpmg.png" width="100" height="100" alt="kpmg" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/shell.png" width="100" height="100" alt="shell" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/andela.png" width="100" height="100" alt="andela" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/mtn.png" width="100" height="100" alt="mtn" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/dangote.png" width="100" height="100" alt="dangote" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/exon_mobile.png" width="100" height="100" alt="exon_mobile" class="company-image">
+                </slide>
+                <slide>
+                  <img src="~/assets/images/nnpc.png" width="100" height="100" alt="nnpc" class="company-image">
+                </slide>
+              </carousel>
             </div>
           </div>
         </div>
@@ -659,15 +683,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import localPosts from '~/data/new-posts.json'
+import incentiveImage from '~/assets/images/incentive.png'
+
+// Define an interface for the post objects
+interface Post {
+  id: string | number;
+  title: string;
+  image: string;
+  location?: string;
+  created_at: string;
+  author: string;
+  content: string;
+  link?: string;
+  is_external?: boolean;
+  details?: string;
+  name?: string;
+  date?: string;
+  slug?: string;
+}
+
 // Components like Header, Footer, SearchPopup, ScrollTop are auto-imported by Nuxt 3 if placed in components/ directory.
 
-// Import images if they are in assets and used in script, otherwise use public path for template src
-// For backgroundUrl used in :style, it's better to have it in public or handle with Vite's asset handling.
-// Assuming backgroundUrl is meant to be a dynamic ref based on some logic, or a static path.
-// If static and in assets: import bgUrl from '~/assets/images/background/bcimage.png'; const backgroundUrlRef = ref(bgUrl);
-// If in public: const backgroundUrlRef = ref('/images/background/bcimage.png');
-// For this example, let's assume it's in public/images/background/bcimage.png
 const backgroundUrlRef = ref('/images/background/bcimage.png'); // Adjusted path
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -681,39 +719,45 @@ const truncateText = (text: string, length: number, suffix: string): string => {
   return text;
 };
 
-const config = useRuntimeConfig();
-const apiBaseUrl = config.public.axios.baseURL;
+// Data fetching - Replaced with dummy data
+const eventsData = ref([
+  { id: 1, name: 'Lagos Economic Summit', details: 'The annual Lagos Economic Summit brings together leaders from business, government, and civil society to discuss the future of Lagos.', date: '2023-10-26T10:00:00Z', location: 'Eko Hotel & Suites' },
+  { id: 2, name: 'Techstars Lagos Demo Day', details: 'The culmination of the Techstars Lagos accelerator program, where startups pitch to investors.', date: '2023-11-15T14:00:00Z', location: 'Landmark Centre' }
+]);
 
-// Data fetching
-const { data: eventsData, error: eventsError } = await useAsyncData('events', async () => {
-  try {
-    const response = await $fetch<{ data: any[] }>(`${apiBaseUrl}/events`);
-    return response.data.length > 4 ? response.data.slice(0, 4) : response.data;
-  } catch (e) {
-    console.error('Failed to fetch events:', e);
-    return []; // Return empty array on error
-  }
-});
+const storyData = ref([
+  { id: 1, title: 'Paystack\'s Journey', content: 'How two Nigerian entrepreneurs built a payments unicorn.', image: 'startup1.jpg' },
+  { id: 2, title: 'Andela\'s Rise', content: 'Training the next generation of African tech talent.', image: 'startup2.jpg' }
+]);
 
-const { data: storyData, error: storiesError } = await useAsyncData('stories', async () => {
- try {
-    const response = await $fetch<{ data: any[] }>(`${apiBaseUrl}/stories`);
-    return response.data.length > 2 ? response.data.slice(0, 2) : response.data;
-  } catch (e) {
-    console.error('Failed to fetch stories:', e);
-    return [];
-  }
-});
+const pressReleaseData = ref<Post[]>([]);
 
-const { data: pressReleaseData, error: pressReleaseError } = await useAsyncData('pressRelease', async () => {
-  try {
-    const response = await $fetch<{ data: any[] }>(`${apiBaseUrl}/posts`);
-    return response.data.length > 4 ? response.data.slice(0, 4) : response.data;
-  } catch (e) {
-    console.error('Failed to fetch press releases:', e);
-    return [];
+const getLink = (item: Post): string => {
+  if (item.is_external && item.link) {
+    return item.link;
   }
-});
+  return `/press-release/${item.slug}`;
+};
+
+const getImage = (item: Post): string => {
+  if (item.id?.toString().startsWith('local-')) {
+    return incentiveImage;
+  }
+  if(item.image) {
+      return `https://api.lagosglobal.org/api/v1/media/${item.image}`;
+  }
+  return ''; // fallback
+};
+
+const formatDate = (dateString: string): string => {
+  if (!dateString) return '';
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
+
+const fetchPressReleases = async () => {
+  pressReleaseData.value = (localPosts as Post[]).sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+};
 
 
 // Reactive state for active investment sector
@@ -752,16 +796,13 @@ const showPower = () => setActiveSector('power');
 const showOil = () => setActiveSector('oil');
 const showEducation = () => setActiveSector('education');
 
-// Handle potential errors from data fetching
-if (eventsError.value) console.error("Error fetching events:", eventsError.value);
-if (storiesError.value) console.error("Error fetching stories:", storiesError.value);
-if (pressReleaseError.value) console.error("Error fetching press releases:", pressReleaseError.value);
-
-// Ensure data is initialized, especially if fetch fails
-if (!eventsData.value) eventsData.value = [];
-if (!storyData.value) storyData.value = [];
-if (!pressReleaseData.value) pressReleaseData.value = [];
-
+onMounted(() => {
+  fetchPressReleases();
+  const preloader = document.querySelector('.preloader') as HTMLElement;
+  if (preloader) {
+    preloader.style.display = 'none';
+  }
+});
 </script>
 
 <style>

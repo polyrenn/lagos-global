@@ -2,10 +2,6 @@
 <template>
   <div>
     <div class="page-wrapper">
-      <!-- Preloader -->
-            <div v-if="loading" class="preloader">
-              <div class="icon" />
-            </div>
 
       <!-- Main Header -->
       <Header />
@@ -14,7 +10,10 @@
       <!--Search Popup-->
       <SearchPopup />
 
-      <div v-if="post.created_at">
+      <div v-if="loading" class="preloader2">
+          <div class="icon" />
+      </div>
+      <div v-else-if="post.created_at">
         <section class="about-section" style="background-color: white">
           <div class="auto-container">
             <div class="d-flex align-items-center justify-content-center">
@@ -84,14 +83,18 @@ export default {
   methods: {
     async fetch () {
       this.loading = true
-      const post = await fetch(`https://api.lagosglobal.org/api/v1/events/${this.$route.params.id}`)
-        .then(res => res.json())
-      this.loading = false
-      if (post.data) {
-        this.post = post.data
-      } else {
+      try {
+        const post = await fetch(`https://api.lagosglobal.org/api/v1/events/${this.$route.params.id}`)
+          .then(res => res.json())
+        if (post.data) {
+          this.post = post.data
+        } else {
+          throw new Error('Post not found')
+        }
+      } catch (error) {
+        console.error('Failed to fetch event', error)
+      } finally {
         this.loading = false
-        throw new Error('Post not found')
       }
     },
   },
@@ -114,6 +117,10 @@ export default {
   },
   mounted () {
     this.fetch();
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
   }
 }
 </script>

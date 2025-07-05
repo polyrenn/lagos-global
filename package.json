@@ -24,11 +24,16 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "google-maps": "^4.3.3",
-    "nuxt": "^3.17.6"
+    "nuxt": "^3.17.6",
+    "v-pagination-3": "^0.1.7",
+    "vue-pdf-embed": "^2.1.2",
+    "vue-slick-carousel": "^1.0.6",
+    "vue3-carousel-nuxt": "^1.1.6"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@nuxt/eslint-config": "^0.3.13",
+    "@types/parse-path": "^7.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.26.0",
     "typescript": "^5.4.5",

@@ -1,11 +1,6 @@
-/* eslint-disable */
 <template>
   <div>
     <div class="page-wrapper">
-      <!-- Preloader -->
-            <div v-if="loading" class="preloader">
-              <div class="icon" />
-            </div>
 
       <!-- Main Header -->
       <Header />
@@ -14,8 +9,10 @@
       <!--Search Popup-->
       <SearchPopup />
 
-
-      <div v-if="post.created_at">
+      <div v-if="loading" class="preloader2">
+          <div class="icon" />
+      </div>
+      <div v-else-if="post">
         <section class="about-section" style="background-color: white">
           <div class="auto-container">
             <div class="d-flex align-items-center justify-content-center">
@@ -28,47 +25,24 @@
                 {{ post.author }}
               </div>
               <div class="pl-2">
-                |   {{ post.created_at.toString().split('T')[0] }}
+                |   {{ formatDate(post.created_at) }}
               </div>
             </div>
-            <!--            <div class="d-flex align-items-center justify-content-center mt-3">-->
-            <!--              <div class="px-2" style="color: #8B0265; border-radius: 10px; border: 1px solid #8B0265">-->
-            <!--                Category-->
-            <!--              </div>-->
-            <!--            </div>-->
             <div class="d-flex align-items-center justify-content-center w-100 mt-3">
               <div class="edu-header1 text-center w-75 text-center">
                 {{ post.title }}
               </div>
             </div>
-            <div class="mt-5 d-flex align-items-center justify-content-center">
-              <img :src="`https://api.lagosglobal.org/api/v1/media/${post.image}`" >
+            <div class="mt-5 pdf-container">
+              <ClientOnly>
+                <vue-pdf-embed :source="pdfSource" />
+              </ClientOnly>
             </div>
-            <div class="p-5 edu-body1 mt-5" v-html="post.content" />
-<!--              {{ post.content.toString().replace(/<[^>]*>/g, '') }}-->
-<!--            </div>-->
-            <!--            <div class="text-center font-weight-bold mt-5" style="color: #333435">-->
-            <!--              Read other press releases-->
-            <!--            </div>-->
-            <!--            <div class="row mt-2">-->
-            <!--              <div class="col-sm-6 p-3">-->
-            <!--                <img src="~/assets/images/startupimg.png" class="w-100" style="height: 300px">-->
-            <!--                <div class="edu-header4 mt-3">-->
-            <!--                  Lorem Ipsum dolor Lorem Ipsum DOlor Lorem Ipsum DOlor-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--              <div class="col-sm-6 p-3">-->
-            <!--                <img src="~/assets/images/startupimg.png" class="w-100" style="height: 300px">-->
-            <!--                <div class="edu-header4 mt-3">-->
-            <!--                  Lorem Ipsum dolor Lorem Ipsum DOlor Lorem Ipsum DOlor-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--            </div>-->
           </div>
         </section>
       </div>
-      <div style="height: 300px; align-items: center; justify-content: center; display: flex" v-if="!loading && !post.created_at">
-         No Post
+      <div style="height: 300px; align-items: center; justify-content: center; display: flex" v-if="!loading && !post">
+         No Post Found
       </div>
     </div>
 
@@ -82,67 +56,63 @@
   </div>
 </template>
 
-<script>
-import ScrollTop from '@/components/ScrollTop'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import SearchPopup from '../../components/SearchPopup'
-import bannerImageOne from '~/assets/images/main-slider/1.jpg'
-import bannerImageTwo from '~/assets/images/main-slider/2.jpg'
-import bannerImageThree from '~/assets/images/main-slider/3.jpg'
-import patternImage from '~/assets/images/background/pattern-1.png'
-import testimonialBackground from '~/assets/images/background/image-2.jpg'
-import suggestionBackground from '~/assets/images/background/image-5.jpg'
-import sanwoOluBackground from '~/assets/images/background/image-1-test.jpg'
-import backgroundUrl from '~/assets/images/background/edu30.png'
-import backgroundUrl2 from '~/assets/images/background/edu-bi2.png'
-import backgroundUrl3 from '~/assets/images/background/ict-bi3.png'
-import backgroundUrl4 from '~/assets/images/background/ict-bi4.png'
+<script setup lang="ts">
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import localPosts from '~/data/new-posts.json';
+import VuePdfEmbed from 'vue-pdf-embed';
 
-export default {
-  components: {
-    ScrollTop,
-    Header,
-    SearchPopup,
-    Footer
-  },
-  methods: {
-    async fetch () {
-      this.loading = true
-      const post = await fetch(`https://api.lagosglobal.org/api/v1/posts/${this.$route.params.id}`)
-        .then(res => res.json())
-      this.loading = false
-      if (post.data) {
-        this.post = post.data
-      } else {
-        this.loading = false
-        throw new Error('Post not found')
-      }
-    },
-  },
-  data () {
-    return {
-      bannerImageOne,
-      bannerImageTwo,
-      bannerImageThree,
-      patternImage,
-      testimonialBackground,
-      suggestionBackground,
-      sanwoOluBackground,
-      backgroundUrl,
-      backgroundUrl2,
-      backgroundUrl3,
-      backgroundUrl4,
-      post: {},
-      loading: true
-    }
-  },
-  mounted () {
-    this.fetch()
-  }
+// Define an interface for the post objects to ensure type safety
+interface Post {
+  id: string | number;
+  title: string;
+  image: string;
+  location?: string;
+  created_at: string;
+  author: string;
+  content: string;
+  link?: string;
+  is_external?: boolean;
+  slug?: string;
 }
+
+const route = useRoute();
+const post = ref<Post | null>(null);
+const loading = ref(true);
+
+const fetchPost = () => {
+  const slug = route.params.id;
+  const foundPost = localPosts.find(p => p.slug === slug);
+  post.value = foundPost || null;
+  loading.value = false;
+};
+
+const pdfSource = computed(() => {
+  if (post.value && post.value.link) {
+    return post.value.link;
+  }
+  return '';
+});
+
+const formatDate = (dateString: string): string => {
+  if (!dateString) return '';
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
+
+onMounted(() => {
+  fetchPost();
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    (preloader as HTMLElement).style.display = 'none';
+  }
+});
 </script>
 
 <style>
-
+.pdf-container {
+  width: 100%;
+  max-width: 800px; /* Adjust max-width as needed */
+  margin: 0 auto;
+}
 </style>
